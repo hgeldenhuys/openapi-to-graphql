@@ -16,11 +16,13 @@ import { Oas3 } from 'openapi-to-graphql/lib/types/oas3'
 import { Options } from 'openapi-to-graphql/lib/types/options'
 
 const app = express()
+const bodyParser = require('body-parser')
+app.use(bodyParser.json({ limit: 1000000 }))
 
 const program = new Command()
 program
   .version(require('../package.json').version)
-  .usage('<OAS JSON file path(s) and/or remote url(s)> [options]')
+  .usage(`<OAS JSON file path(s) and/or remote url(s)> [options]`)
   .arguments('<path(s) and/or url(s)>')
   .option(
     '-s, --strict',

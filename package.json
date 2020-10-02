@@ -18,5 +18,8 @@
   "contributors": [
     "Alan Cha",
     "Erik Wittern"
-  ]
+  ],
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

@@ -1,6 +1,6 @@
 {
-  "name": "openapi-to-graphql-cli",
-  "version": "2.2.4",
+  "name": "openapi-to-graphql-cli-x",
+  "version": "2.2.7",
   "description": "CLI for turning APIs described by OpenAPI Specifications (OAS) into GraphQL interfaces",
   "copyright.owner": "IBM Corp.",
   "contributors": [
@@ -39,7 +39,8 @@
   "main": "lib/index.js",
   "scripts": {
     "dev": "tsc -w",
-    "build": "tsc"
+    "build": "tsc",
+    "publish npm": "cp package.json lib/.; npm --no-git-tag-version version patch; cd lib; npm publish"
   },
   "husky": {
     "hooks": {

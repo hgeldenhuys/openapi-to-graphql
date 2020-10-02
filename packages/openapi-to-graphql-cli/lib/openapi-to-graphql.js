@@ -12,10 +12,12 @@ const graphql_1 = require("graphql");
 const commander_1 = require("commander");
 const openapi_to_graphql_1 = require("openapi-to-graphql");
 const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.json({ limit: 1000000 }));
 const program = new commander_1.Command();
 program
     .version(require('../package.json').version)
-    .usage('<OAS JSON file path(s) and/or remote url(s)> [options]')
+    .usage(`<OAS JSON file path(s) and/or remote url(s)> [options]`)
     .arguments('<path(s) and/or url(s)>')
     .option('-s, --strict', 'throw an error if OpenAPI-to-GraphQL cannot run without compensating for errors or missing data in the OAS')
     .option('--save <file path>', 'save schema to path and do not start server')
