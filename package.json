@@ -2,6 +2,7 @@
   "name": "openapi-to-graphql-root",
   "private": true,
   "scripts": {
+    "go": "node  --trace-warnings ./packages/openapi-to-graphql-cli/lib/openapi-to-graphql.js  --cors --port=3001 http://localhost:2020/explorer/openapi.json --fillEmptyResponses",
     "test": "cd packages/openapi-to-graphql/ && npm test"
   },
   "devDependencies": {
@@ -20,6 +21,9 @@
     "Erik Wittern"
   ],
   "dependencies": {
-    "express": "^4.17.1"
+    "commander": "^6.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0"
   }
 }
